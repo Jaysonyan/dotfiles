@@ -1,0 +1,106 @@
+snippet frac "Fraction"
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet ali "Math Align"
+\begin{align*}
+	$0
+\end{align*}
+endsnippet
+
+snippet enu "Letter Enumerate"
+\begin{enumerate}[a)]
+	\item$1
+\end{enumerate}
+endsnippet
+
+snippet item "Bulleted List"
+\begin{itemize}
+	\item$1
+\end{itemize}
+endsnippet
+
+snippet verb "Code"
+\begin{verbatim}
+	$0
+\end{verbatim}
+endsnippet
+
+snippet matrix "Matrix"
+\begin{tabular}{${1:|c|c|c|}}
+	\hline
+	${2:0 & 0 & 0}
+\end{tabular}
+endsnippet
+
+snippet graphic "Image Graphic"
+\includegraphics[width=8cm]{$1}
+endsnippet
+
+snippet -> "Right Arrow"
+\rightarrow
+endsnippet
+
+snippet <- "Left Arrow"
+\leftarrow
+endsnippet
+
+snippet in "In"
+\in
+endsnippet
+
+snippet nin "Not In"
+\notin
+endsnippet
+
+snippet ceil "Ceiling"
+\left\lceil $1 \right\rceil
+endsnippet
+
+snippet floor "Floor"
+\left\lfloor $1 \right\rfloor
+endsnippet
+
+snippet sq "Square Root"
+\sqrt{$1}
+endsnippet
+
+snippet int "Integral"
+\int_{${1:-\infty}}^{${2:\infty}} $0
+endsnippet
+
+snippet sum "Sum"
+\sum_{${1:i=1}}^{${2:n}} $0
+endsnippet
+
+snippet lim "Limit"
+\lim_{${1:n} \to ${2:\infty}} $0
+endsnippet
+
+snippet start "Starter Assignment Template"
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsymb}
+\usepackage{tikz}
+\usepackage{euscript}
+\usepackage[shortlabels]{enumitem}
+
+\pagestyle{empty}
+\begin{document}
+	\begin{center}
+	\Large{${1:Course} Assignment ${2:1}}
+	\large{Name: Jayson Yan.}
+	\end{center}
+
+	{\bf Problem 1:}\\\\
+	$0
+\end{document}
+endsnippet
+
+snippet prob "Problem SubHeader"
+{\bf Problem ${1:1}:}\\\\
+$0
+endsnippet
+
