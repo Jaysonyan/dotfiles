@@ -1,1 +1,28 @@
-/Users/Jayson/.bash_profile
+alias bim="vim"
+alias brc="vim ~/.bashrc"
+alias vrc="vim ~/.vimrc"
+alias bp="vim ~/.bash_profile"
+alias tconf="vim ~/.tmux.conf"
+alias snip="cd ~/.vim/UltiSnips"
+alias dtop="cd ~/Desktop"
+alias dload="cd ~/Downloads"
+alias doc="cd ~/Documents"
+alias gs="git status"
+alias gp="git pull"
+alias ga="git add ."
+alias gd="git diff"
+alias gb="git branch"
+
+# --- School Stuff ---
+# 3A
+alias 341="cd ~/Documents/Waterloo/3A/cs341"
+alias ui="cd ~/Documents/Waterloo/3A/cs349"
+alias ethics="cd ~/Documents/Waterloo/3A/cs492"
+alias 213="cd ~/Documents/Waterloo/3A/math213"
+alias os="cd ~/Documents/Waterloo/3A/se350"
+alias qa="cd ~/Documents/Waterloo/3A/se465"
+# 2B
+alias 240="cd ~/Documents/Waterloo/2B/cs240"
+alias 247="cd ~/Documents/Waterloo/2B/cs247"
+alias earth="cd ~/Documents/Waterloo/2B/earth121"
+alias 239="cd ~/Documents/Waterloo/2B/math239"
