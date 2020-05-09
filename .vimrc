@@ -26,6 +26,9 @@ set nofixendofline "No newline at EOF
 set visualbell
 set spelllang=en
 map <Leader>s :setlocal spell<CR>
+set hidden
+set ignorecase
+set smartcase
 
 " Tabs:
 set autoindent

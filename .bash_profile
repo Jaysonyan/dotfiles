@@ -2,6 +2,7 @@ alias bim="vim"
 alias brc="vim ~/.bashrc"
 alias vrc="vim ~/.vimrc"
 alias bp="vim ~/.bash_profile"
+alias ala="vim ~/.config/alacritty/alacritty.yml"
 alias tconf="vim ~/.tmux.conf"
 alias snip="cd ~/.vim/UltiSnips"
 alias dtop="cd ~/Desktop"
@@ -12,6 +13,7 @@ alias gp="git pull"
 alias ga="git add ."
 alias gd="git diff"
 alias gb="git branch"
+alias la="ls -A"
 
 # --- School Stuff ---
 # 3A
