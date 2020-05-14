@@ -1,7 +1,9 @@
 source ~/.bashrc
 alias v="nvim"
+alias vim="nvim"
 alias brc="nvim ~/.bashrc"
 alias vrc="nvim ~/.vimrc"
+alias vinit="nvim ~/.config/nvim/init.vim"
 alias bp="nvim ~/.bash_profile"
 alias ala="nvim ~/.config/alacritty/alacritty.yml"
 alias tconf="nvim ~/.tmux.conf"

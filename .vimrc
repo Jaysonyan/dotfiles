@@ -32,6 +32,8 @@ map <Leader>s :setlocal spell<CR>
 set hidden
 set ignorecase
 set smartcase
+ "Clear search highlighting on esc
+nnoremap <Esc> :nohl<CR><Esc>
 
 " Tabs:
 set autoindent
@@ -85,5 +87,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" Ack:
-nnoremap <Leader>a :Ack!<Space>
+" FZF:
+nnoremap <Leader>o :Files<CR>
+nnoremap <Leader>f :Rg<CR>
