@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/vplug')
-  Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'tpope/vim-commentary'
@@ -9,6 +8,10 @@ call plug#begin('~/.vim/vplug')
   Plug 'itchyny/lightline.vim'
   Plug 'lervag/vimtex'
   Plug 'SirVer/ultisnips'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
+  " Color Schemes
   Plug 'joshdick/onedark.vim'
   Plug 'arzg/vim-colors-xcode'
   Plug 'altercation/vim-colors-solarized'
