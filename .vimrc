@@ -10,6 +10,7 @@ call plug#begin('~/.vim/vplug')
   Plug 'SirVer/ultisnips'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
