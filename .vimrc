@@ -13,6 +13,7 @@ call plug#begin('~/.vim/vplug')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'jiangmiao/auto-pairs'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
@@ -42,6 +43,7 @@ nnoremap <Esc> :nohl<CR><Esc>
 set autoindent
 set shiftwidth=2 "For width of >>
 set softtabstop=2
+set tabstop=2
 set noexpandtab
 
 " Theme:
@@ -89,6 +91,9 @@ augroup END
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" Vim Go:
+let g:go_doc_keywordprg_enabled = 0
 
 " FZF:
 nnoremap <Leader>o :Files<CR>
