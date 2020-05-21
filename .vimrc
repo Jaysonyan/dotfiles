@@ -92,4 +92,5 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " FZF:
 nnoremap <Leader>o :Files<CR>
+nnoremap <Leader>go :GFiles<CR>
 nnoremap <Leader>f :Rg<CR>
