@@ -11,6 +11,8 @@ call plug#begin('~/.vim/vplug')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
