@@ -7,25 +7,25 @@ call plug#begin('~/.vim/vplug')
   Plug 'mileszs/ack.vim'
   Plug 'itchyny/lightline.vim'
   Plug 'lervag/vimtex'
-  Plug 'SirVer/ultisnips'
+  " Plug 'SirVer/ultisnips'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'jiangmiao/auto-pairs'
+  Plug 'google/vim-jsonnet'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
   Plug 'arzg/vim-colors-xcode'
   Plug 'altercation/vim-colors-solarized'
+	Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " General Configs:
 let mapleader=" "
 syntax on
 filetype plugin indent on
-set smartcase
 set showcmd
 set number relativenumber
 set backspace=indent,eol,start
@@ -36,8 +36,8 @@ map <Leader>s :setlocal spell<CR>
 set hidden
 set ignorecase
 set smartcase
- "Clear search highlighting on esc
-nnoremap <Esc> :nohl<CR><Esc>
+set hidden
+nnoremap <C-c> :nohl<CR><C-c>
 
 " Tabs:
 set autoindent
@@ -70,11 +70,10 @@ nnoremap H ^
 nnoremap L $
 nnoremap J }
 nnoremap K {
-
-" CtrlP Configs:
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules',
-  \ }
+vnoremap H ^
+vnoremap L $
+vnoremap J }
+vnoremap K {
 
 " Latex:
 let g:tex_flavor='latex'
@@ -99,3 +98,43 @@ let g:go_doc_keywordprg_enabled = 0
 nnoremap <Leader>o :Files<CR>
 nnoremap <Leader>go :GFiles<CR>
 nnoremap <Leader>f :Rg<CR>
+
+" NERDTree:
+nnoremap <Leader>n :NERDTree<CR>
+
+" LightLine:
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ }
+      \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" Supposed to improve esc times... idk
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
