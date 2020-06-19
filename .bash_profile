@@ -19,6 +19,8 @@ alias ga="git add ."
 alias gd="git diff"
 alias gb="git branch"
 alias la="ls -A"
+alias sbp="source ~/.bash_profile"
+alias st="tmux source ~/.tmux.conf"
 
 # --- School Stuff ---
 # 3A

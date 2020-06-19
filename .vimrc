@@ -14,6 +14,7 @@ call plug#begin('~/.vim/vplug')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'google/vim-jsonnet'
+  Plug 'unblevable/quick-scope'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
@@ -138,3 +139,9 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+" QuickScope:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_max_chars=150
+highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
