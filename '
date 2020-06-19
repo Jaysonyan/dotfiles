@@ -30,10 +30,7 @@ set -sg escape-time 10
 set -g base-index 1
 setw -g pane-base-index 1
 
-# bind l split-window -h 
-# bind j split-window -v
-bind j split-window -c "#{pane_current_path}"
-bind l split-window -h -c "#{pane_current_path}"
-bind c new-window -c "#{pane_current_path}"
+bind l split-window -h 
+bind j split-window -v
 unbind %
 unbind '"'

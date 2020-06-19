@@ -1,6 +1,8 @@
 source ~/.bashrc
 alias v="nvim"
 alias vim="nvim"
+
+# Edit configs
 alias brc="nvim ~/.bashrc"
 alias vrc="nvim ~/.vimrc"
 alias vinit="nvim ~/.config/nvim/init.vim"
@@ -8,19 +10,31 @@ alias bp="nvim ~/.bash_profile"
 alias ala="nvim ~/.config/alacritty/alacritty.yml"
 alias tconf="nvim ~/.tmux.conf"
 alias snip="cd ~/.vim/UltiSnips"
+
+# Movement
 alias b="cd .."
 alias dtop="cd ~/Desktop"
 alias dload="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias dot="cd ~/dotfiles"
+
+# Git stuff
 alias gs="git status"
 alias gp="git pull"
 alias ga="git add ."
 alias gd="git diff"
 alias gb="git branch"
 alias la="ls -A"
+
+# Sourcing
 alias sbp="source ~/.bash_profile"
 alias st="tmux source ~/.tmux.conf"
+
+# Tmux stuff
+alias tls="tmux ls"
+alias tn="tmux new-session -s"
+alias tk="tmux kill-session -t"
+alias ta="tmux a -t"
 
 # --- School Stuff ---
 # 3A
