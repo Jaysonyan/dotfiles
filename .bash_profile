@@ -24,7 +24,6 @@ alias gp="git pull"
 alias ga="git add ."
 alias gd="git diff"
 alias gb="git branch"
-alias la="ls -A"
 
 # Sourcing
 alias sbp="source ~/.bash_profile"
@@ -35,6 +34,12 @@ alias tls="tmux ls"
 alias tn="tmux new-session -s"
 alias tk="tmux kill-session -t"
 alias ta="tmux a -t"
+alias tkill="tmux kill-server"
+
+# Misc
+alias getpath="echo $PATH | tr ':' '\n'"
+alias la="ls -A"
+alias lal="ls -Al"
 
 # --- School Stuff ---
 # 3A
