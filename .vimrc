@@ -15,6 +15,7 @@ call plug#begin('~/.vim/vplug')
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'google/vim-jsonnet'
   Plug 'unblevable/quick-scope'
+  Plug 'tpope/vim-fugitive'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
@@ -69,8 +70,9 @@ nnoremap <C-l> <C-W>l
 " General Navigation:
 nnoremap H ^
 nnoremap L $
-nnoremap J }
-nnoremap K {
+" Don't include { } in the jumplist
+nnoremap J :<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
+nnoremap K :<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>
 vnoremap H ^
 vnoremap L $
 vnoremap J }
