@@ -41,6 +41,9 @@ alias getpath="echo $PATH | tr ':' '\n'"
 alias la="ls -A"
 alias lal="ls -Al"
 
+# Settings
+export HISTCONTROL=ignoredups
+
 # --- School Stuff ---
 # 3A
 alias 341="cd ~/Documents/Waterloo/3A/cs341"
