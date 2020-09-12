@@ -16,6 +16,8 @@ call plug#begin('~/.vim/vplug')
   Plug 'google/vim-jsonnet'
   Plug 'unblevable/quick-scope'
   Plug 'tpope/vim-fugitive'
+  " School
+  Plug 'flxf/uCpp.vim'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
@@ -40,6 +42,9 @@ set ignorecase
 set smartcase
 set hidden
 nnoremap <C-c> :nohl<CR><C-c>
+" Yank from clipboard easier
+vnoremap <leader>yc "*y
+nnoremap <leader>yv "*p
 
 " Tabs:
 set autoindent

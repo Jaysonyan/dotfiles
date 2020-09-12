@@ -45,6 +45,9 @@ alias lal="ls -Al"
 export HISTCONTROL=ignoredups
 
 # --- School Stuff ---
+# 3B
+alias 343="cd ~/Desktop/cs343"
+alias 348="cd ~/Desktop/cs348"
 # 3A
 alias 341="cd ~/Documents/Waterloo/3A/cs341"
 alias ui="cd ~/Documents/Waterloo/3A/cs349"
