@@ -68,7 +68,3 @@ alias 240="cd ~/Documents/Waterloo/2B/cs240"
 alias 247="cd ~/Documents/Waterloo/2B/cs247"
 alias earth="cd ~/Documents/Waterloo/2B/earth121"
 alias 239="cd ~/Documents/Waterloo/2B/math239"
-
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
-fi
