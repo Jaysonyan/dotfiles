@@ -16,6 +16,8 @@ call plug#begin('~/.vim/vplug')
   Plug 'google/vim-jsonnet'
   Plug 'unblevable/quick-scope'
   Plug 'tpope/vim-fugitive'
+  Plug 'MaxMEllon/vim-jsx-pretty'
+  Plug 'yuezk/vim-js'
   " School
   Plug 'flxf/uCpp.vim'
 
@@ -45,6 +47,7 @@ nnoremap <C-c> :nohl<CR><C-c>
 " Yank from clipboard easier
 vnoremap <leader>yc "*y
 nnoremap <leader>yv "*p
+au BufReadPost *.sqc set filetype=c
 
 " Tabs:
 set autoindent
@@ -52,6 +55,8 @@ set shiftwidth=2 "For width of >>
 set softtabstop=2
 set tabstop=2
 set noexpandtab
+autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4
 
 " Theme:
 set background=dark
