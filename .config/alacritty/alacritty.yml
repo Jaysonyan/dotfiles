@@ -6,6 +6,7 @@ window:
     x: 5
     y: 5
   dynamic_padding: true
+  dynamic_title: true
   decorations: full
   startup_mode: Windowed
   title: Alacritty
@@ -56,13 +57,6 @@ colors:
     cyan:    '#5fb9bc'
     white:   '#ffffff'
 
-dynamic_title: true
-
 cursor:
   style: Block
   unfocused_hollow: true
-
-key_bindings:
-  - { key: Add,    mods: Command,            action: IncreaseFontSize }
-  - { key: Minus,  mods: Command,            action: DecreaseFontSize }
-  - { key: N,      mods: Command,            action: SpawnNewInstance }
