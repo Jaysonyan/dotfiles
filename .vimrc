@@ -42,7 +42,6 @@ map <Leader>s :setlocal spell<CR>
 set hidden
 set ignorecase
 set smartcase
-set hidden
 nnoremap <C-c> :nohl<CR><C-c>
 " Yank from clipboard easier
 vnoremap <leader>yc "*y
@@ -66,6 +65,7 @@ colorscheme xcodedark
 " NerdTree Configs:
 " Close vim if last pane open is nerd tree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
 
 " Cursor Display Options:
 let &t_SI = "\<esc>[5 q"

@@ -1,6 +1,5 @@
 source ~/.bashrc
 alias v="nvim"
-alias vim="nvim"
 
 # Edit configs
 alias brc="nvim ~/.bashrc"
@@ -18,6 +17,7 @@ alias dtop="cd ~/Desktop"
 alias dload="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias dot="cd ~/dotfiles"
+alias rk="cd ~/Desktop/reviewkit"
 
 # Git stuff
 alias gs="git status"
