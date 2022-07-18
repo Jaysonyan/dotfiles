@@ -36,7 +36,7 @@ colors:
     text: '#b9c0cb'
     background: '#3e4452'
   primary:
-    background: '#282c34'
+    background: '#262626'
     foreground: '#b9c0cb'
   normal:
     black:   '#5c6370'
