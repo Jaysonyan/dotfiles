@@ -9,6 +9,7 @@ alias bp="nvim ~/.bash_profile"
 alias ala="nvim ~/.config/alacritty/alacritty.yml"
 alias tconf="nvim ~/.tmux.conf"
 alias snip="cd ~/.vim/UltiSnips"
+alias sshc="nvim ~/.ssh/config"
 
 # QOL
 alias b="cd .."
@@ -48,11 +49,8 @@ export HISTCONTROL=ignoredups
 
 # --- School Stuff ---
 alias uwssh="ssh -Y jj2yan@linux.student.cs.uwaterloo.ca"
-alias uwsshh="ssh -Y jj2yan@ubuntu1804-008.student.cs.uwaterloo.ca"
-alias 343scp="scp -r ~/Documents/Waterloo/3B/cs343/final  jj2yan@linux.student.cs.uwaterloo.ca:~/cs343"
-# alias 343scp="scp -r *.cc *.h Makefile   jj2yan@linux.student.cs.uwaterloo.ca:~/cs343/a6"
-alias dbscp="scp -r ~/Documents/Waterloo/3B/cs348/a3 jj2yan@linux.student.cs.uwaterloo.ca:~/db"
-alias ecscp="scp -r ~/Documents/Waterloo/3B/ece358/lab2 jj2yan@linux.student.cs.uwaterloo.ca:~/ece358"
+alias ecessh="ssh -A jj2yan@eceterm.uwaterloo.ca"
+alias rk="cd ~/Desktop/rk"
 # 3B
 alias 343="cd ~/Documents/Waterloo/3B/cs343"
 alias 348="cd ~/Documents/Waterloo/3B/cs348"
@@ -60,7 +58,6 @@ alias 390="cd ~/Documents/Waterloo/3B/se390"
 alias 380="cd ~/Documents/Waterloo/3B/se380"
 alias 358="cd ~/Documents/Waterloo/3B/ece358"
 alias 464="cd ~/Documents/Waterloo/3B/se464"
-alias rk="cd ~/Desktop/rk"
 # 3A
 alias 341="cd ~/Documents/Waterloo/3A/cs341"
 alias ui="cd ~/Documents/Waterloo/3A/cs349"
@@ -73,3 +70,4 @@ alias 240="cd ~/Documents/Waterloo/2B/cs240"
 alias 247="cd ~/Documents/Waterloo/2B/cs247"
 alias earth="cd ~/Documents/Waterloo/2B/earth121"
 alias 239="cd ~/Documents/Waterloo/2B/math239"
+. "$HOME/.cargo/env"

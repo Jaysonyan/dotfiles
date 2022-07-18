@@ -13,13 +13,12 @@ call plug#begin('~/.vim/vplug')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'google/vim-jsonnet'
   Plug 'unblevable/quick-scope'
   Plug 'tpope/vim-fugitive'
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'yuezk/vim-js'
-  " School
-  Plug 'flxf/uCpp.vim'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'rust-lang/rust.vim'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
@@ -42,6 +41,7 @@ map <Leader>s :setlocal spell<CR>
 set hidden
 set ignorecase
 set smartcase
+set encoding=utf8
 nnoremap <C-c> :nohl<CR><C-c>
 " Yank from clipboard easier
 vnoremap <leader>yc "*y
@@ -56,11 +56,22 @@ set tabstop=2
 set noexpandtab
 autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4
 autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype java setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype javascriptreact setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype vim setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype scala setlocal expandtab tabstop=2 shiftwidth=2
 
 " Theme:
 set background=dark
 set t_Co=256
 colorscheme xcodedark
+
+" COC code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " NerdTree Configs:
 " Close vim if last pane open is nerd tree
@@ -92,12 +103,12 @@ vnoremap K {
 let g:tex_flavor='latex'
 let g:vimtex_view_method='skim'
 let g:vimtex_view_general_viewer='skim'
-let g:vimtex_quickfix_latexlog = {'default' : 0}
 " Clean up files on quit
 augroup vimtex_config
   autocmd!
   autocmd Filetype tex autocmd BufUnload <buffer> VimtexClean
 augroup END
+let g:vimtex_quickfix_open_on_warning = 0
 
 " Snippets:
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -106,6 +117,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " Vim Go:
 let g:go_doc_keywordprg_enabled = 0
+
+" Rust vim:
+let g:rustfmt_autosave = 1
 
 " FZF:
 nnoremap <Leader>o :Files<CR>
