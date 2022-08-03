@@ -4,25 +4,32 @@ call plug#begin('~/.vim/vplug')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
   Plug 'airblade/vim-gitgutter'
-  Plug 'mileszs/ack.vim'
   Plug 'itchyny/lightline.vim'
   Plug 'lervag/vimtex'
-  " Plug 'SirVer/ultisnips'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'unblevable/quick-scope'
   Plug 'tpope/vim-fugitive'
-  Plug 'MaxMEllon/vim-jsx-pretty'
-  Plug 'yuezk/vim-js'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+  " LSP
+  Plug 'neovim/nvim-lspconfig'
+
+  " Completion
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/vim-vsnip'
+
+  " Things that I might not need anymore?
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'rust-lang/rust.vim'
+  Plug 'yuezk/vim-js'
+  Plug 'MaxMEllon/vim-jsx-pretty'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
-  Plug 'arzg/vim-colors-xcode'
+  Plug 'Jaysonyan/vim-colors-xcode'
   Plug 'altercation/vim-colors-solarized'
 	Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
@@ -42,6 +49,7 @@ set hidden
 set ignorecase
 set smartcase
 set encoding=utf8
+set mouse=""
 nnoremap <C-c> :nohl<CR><C-c>
 " Yank from clipboard easier
 vnoremap <leader>yc "*y
@@ -67,11 +75,9 @@ set background=dark
 set t_Co=256
 colorscheme xcodedark
 
-" COC code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" LSP Configs
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 
 " NerdTree Configs:
 " Close vim if last pane open is nerd tree
@@ -110,11 +116,6 @@ augroup vimtex_config
 augroup END
 let g:vimtex_quickfix_open_on_warning = 0
 
-" Snippets:
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
 " Vim Go:
 let g:go_doc_keywordprg_enabled = 0
 
@@ -144,17 +145,6 @@ function! LightlineFilename()
   endif
   return expand('%')
 endfunction
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 
 " Supposed to improve esc times... idk
 if ! has('gui_running')

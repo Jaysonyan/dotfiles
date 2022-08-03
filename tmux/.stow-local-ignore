@@ -1,0 +1,9 @@
+/config
+/img
+/lib
+/segments
+/themes
+/color_palette.sh
+/generate_rc.sh
+/mute_powerline.sh
+/powerline.sh
