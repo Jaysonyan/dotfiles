@@ -12,8 +12,16 @@ call plug#begin('~/.vim/vplug')
   Plug 'unblevable/quick-scope'
   Plug 'tpope/vim-fugitive'
 
+  " Open Github File
+  Plug 'tyru/open-browser.vim'
+  Plug 'tyru/open-browser-github.vim'
+
+  " Boilerplate lua fcns (used by nvim-metals)
+  Plug 'nvim-lua/plenary.nvim'
+
   " LSP
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/mason.nvim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
@@ -26,6 +34,8 @@ call plug#begin('~/.vim/vplug')
   Plug 'rust-lang/rust.vim'
   Plug 'yuezk/vim-js'
   Plug 'MaxMEllon/vim-jsx-pretty'
+  Plug 'google/vim-jsonnet'
+  Plug 'scalameta/nvim-metals'
 
   " Color Schemes
   Plug 'joshdick/onedark.vim'
@@ -61,7 +71,7 @@ set autoindent
 set shiftwidth=2 "For width of >>
 set softtabstop=2
 set tabstop=2
-set noexpandtab
+set expandtab
 autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4
 autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4
 autocmd Filetype java setlocal expandtab tabstop=2 shiftwidth=2
@@ -129,6 +139,7 @@ nnoremap <Leader>f :Rg<CR>
 
 " NERDTree:
 nnoremap <Leader>n :NERDTree<CR>
+let g:NERDTreeMinimalMenu=1 " hack for borked vim TODO: delete later
 
 " LightLine:
 let g:lightline = {
@@ -146,6 +157,9 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
+" FileType alias
+autocmd BufEnter *.jsonnet.TEMPLATE :setlocal filetype=jsonnet
+
 " Supposed to improve esc times... idk
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -161,3 +175,17 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_max_chars=150
 highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
 highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+
+" Python Configs
+autocmd BufWritePre *.py call Yapf_save_cursor()
+function! Yapf_save_cursor()
+  let current_cursor = getpos(".")
+  silent execute '0,$!python -m yapf'
+  if v:shell_error != 0
+    silent undo
+  endif
+  call setpos(".", current_cursor)
+endfunction
+
+" Toggle jsonnet fmt on save
+let g:jsonnet_fmt_on_save = 0

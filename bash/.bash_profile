@@ -19,6 +19,7 @@ alias dload="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias dot="cd ~/dotfiles"
 alias rk="cd ~/Desktop/reviewkit"
+alias nt="cd ~/Desktop/Notes"
 
 # Git stuff
 alias gs="git status"
@@ -70,4 +71,4 @@ alias 240="cd ~/Documents/Waterloo/2B/cs240"
 alias 247="cd ~/Documents/Waterloo/2B/cs247"
 alias earth="cd ~/Documents/Waterloo/2B/earth121"
 alias 239="cd ~/Documents/Waterloo/2B/math239"
-. "$HOME/.cargo/env"
+export PATH=/opt/homebrew/bin:/opt/homebrew/opt/llvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
