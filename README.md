@@ -25,6 +25,12 @@ brew install --cask font-fira-code
 ```
 
 ### Neovim
+I use [vim-plug](https://github.com/junegunn/vim-plug) as my plugin manager
+```shell
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 I use fzf which requires [ripgrep](https://github.com/BurntSushi/ripgrep)
 ```shell
 brew install ripgrep
